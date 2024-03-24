@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PLANET NAMES</title>
+</head>
+<body>
+    <h1 style="background-color:rgb(196, 255, 244); text-align: center;">Planet</h1>
+    
+    <script>
+        var x = parseInt(prompt('List of Planets 1.Mercury 2.Venus 3.Earth 4.Mars 5.Jupiter 6.Saturn 7.Uranus 8.Neptune Enter the Planet ID:'));
+        
+        var planetNames = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"];
+        
+        if (x >= 1 && x <= planetNames.length) {
+            var name = planetNames[x - 1];
+        } else {
+            var name = "Invalid PLANET NAME";
+        }
+        
+        document.write('<h2 style="text-align: center; background-color: rgb(207, 90, 27); border:20px;"> Result is: ' + name + '</h2>');
+    </script>
+</body>
+</html>

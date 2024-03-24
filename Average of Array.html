@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculate Average of Elements in Array</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        background-color: #FFE4C4;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 0;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    input[type="button"] {
+        background-color: #CF5A1B;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    input[type="button"]:hover {
+        background-color: #a04012;
+    }
+
+    h2 {
+        text-align: center;
+        background-color: #CF5A1B;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        color: #fff;
+    }
+  </style>
+</head>
+<body>
+    <h1>AVERAGE CALCULATOR</h1>
+    <div class="container">
+        <label for="arrayInput">Enter elements separated by commas (,):</label><br>
+        <input type="text" id="arrayInput"><br>
+        <input type="button" value="Calculate Average" onclick="calculateAverage()">
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateAverage() {
+            const userInput = document.getElementById("arrayInput").value;
+            const userArray = userInput.split(",").map(Number);
+            let sum = 0;
+
+            if (userArray.length === 0) {
+                document.getElementById("result").innerHTML = "The array is empty";
+                return;
+            }
+
+            for (let i = 0; i < userArray.length; i++) {
+                sum += userArray[i];
+            }
+
+            const average = sum / userArray.length;
+            document.getElementById("result").innerHTML = '<h2>The average is: ' + average + '</h2>';
+        }
+    </script>
+</body>
+</html>

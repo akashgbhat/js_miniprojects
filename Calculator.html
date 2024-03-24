@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Operations Calculator</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        background-color: bisque;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+    }
+
+    div.container {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 22px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #CF5A1B;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #a04012;
+    }
+
+    .result {
+        margin-top: 20px;
+        font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+    <h1>Basic Operations Calculator</h1>
+    <div class="container">
+        <label for="n1">Number 1:</label>
+        <input type="text" id="n1" placeholder="Enter number 1">
+        <br>
+        <label for="n2">Number 2:</label>
+        <input type="text" id="n2" placeholder="Enter number 2">
+        <br>
+        <label for="op">Operator:</label>
+        <input type="text" id="op" placeholder="Enter operator">
+        <br>
+        <button onclick="calculateResult()">Calculate</button>
+    </div>
+    <div id="result" class="result"></div>
+
+    <script>
+        function calculateResult() {
+            const num1 = parseFloat(document.getElementById("n1").value);
+            const num2 = parseFloat(document.getElementById("n2").value);
+            const operator = document.getElementById("op").value;
+            let result;
+
+            switch (operator) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = "Invalid operator";
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Counting Sheep</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        background-color: bisque;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+    }
+
+    h2 {
+        text-align: center;
+        background-color: #CF5A1B;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        color: #fff;
+    }
+  </style>
+</head>
+<body>
+    <h1>Counting Sheep</h1>
+    <div id="result" class="result"></div>
+
+    <script>
+        function countSheep(arr) {
+            let total = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === 'true') {
+                    total += 1;
+                }
+            }
+            return total;
+        }
+
+        const input = prompt("Enter 'true' if the sheep is present, else 'false', separated by commas:");
+        const array = input.split(",");
+        const result = countSheep(array);
+
+        document.getElementById("result").innerHTML = '<h2>Result is: ' + result + '</h2>';
+    </script>
+</body>
+</html>
